@@ -1,6 +1,6 @@
 # Rediseño integral de nexoiarg.com
 
-Fecha: 2026-09-30. Estado: en implementación.
+Fecha: 2026-09-30. Revisión visual: 2026-10-01. Estado: publicado y verificado; envío a Git pendiente de revisión de acceso al repositorio público.
 
 ## Objetivo
 
@@ -26,15 +26,20 @@ Convertir la web estática de NexoIArg en una presentación profesional que expl
 6. WhatsApp, redes, política de privacidad, FAQ, eventos y SEO siguen accesibles. Analítica registra vista y origen de campaña sin mensajes ni datos personales.
 7. Precios visibles: WhatsApp $290.000 inicial + $180.000 mensual, web/Telegram $190.000 inicial + $120.000 mensual. Mostrar $470.000 y $310.000 como implementación más primer mes. Mantener cupo de 800, aviso al 80%, excedente de $70 autorizado, baja con 30 días, actualización manual de datos, integraciones aparte y condición de WhatsApp celular. Separar cupo propio de tarifas de Meta.
 8. El punto de venta 1.1.1 se presenta como programa local de una PC Windows con ventas, productos, stock, caja, cuentas corrientes, proveedores y copias. Incluye solicitud de demostración. No se afirman nube, móvil, multicaja, ARCA ni redistribución de catálogos.
-9. El retrato de la sección personal utiliza la versión actual de `Jonatan.png`, con URL de recurso nueva para evitar que la caché muestre la imagen anterior.
+9. El retrato de la sección personal utiliza la versión actual de `Jonatan.png`, con URL de recurso nueva para evitar que la caché muestre la imagen anterior. El archivo recibido tiene bytes JPEG aunque se llama `.png`; la copia servida por la web usará extensión `.jpg` y `Jonatan.png` seguirá intacto en el repositorio.
 10. Cada servicio principal tendrá una página útil y diferenciada, enlazada desde la portada, con título, descripción, contenido visible, URL canónica y presencia en el sitemap. No se crearán páginas repetidas por barrios o ciudades sin evidencia de cobertura real.
 11. La información estructurada debe coincidir con lo visible; el rastreo de Google y OAI-SearchBot debe estar permitido. Las URL no canónicas redirigirán a HTTPS sin `www`.
 12. La configuración pública debe limitar el agente a localhost, no confiar en IP reenviadas por visitantes, limitar tamaño y frecuencia de peticiones, y enviar encabezados de seguridad que no rompan el sitio.
 13. El receptor de eventos de la web sólo guardará nombre de evento, ruta, campaña y fecha; dejará de registrar IP y agente de usuario. La política explicará por separado los registros técnicos del servidor.
+14. Tras la publicación, notificar las seis URL a los motores compatibles con IndexNow mediante una clave pública validable en el dominio. El acuse de recibo no se presentará como prueba de indexación ni de posición.
+15. La marca visible en la cabecera, el pie y el icono del navegador debe usar el logo real de NexoIArg entregado en el proyecto, no una inicial inventada. Se comprobará la legibilidad en móvil y escritorio.
+16. Las tres fichas del portfolio tendrán imagen: el logo de Cerámicas Gutiérrez leído de su carpeta `public`, la pieza `delivery-track.png` de Moto Express y una gráfica vectorial propia de Distribuidora Monti basada en el camión y la gama de colores observados en su web. Los archivos de los otros proyectos se leen y copian; no se editan allí. La gráfica de Monti no se presentará como un logo oficial que no fue entregado.
+17. En las tarjetas de precios, los dos importes, el total del primer mes y la acción de consulta deben poder leerse antes de los detalles extensos. Mantener todas las condiciones comerciales en desplegables accesibles, sin alterar los importes ni ocultarlas del HTML.
+18. Tras la revisión pública, el logo cuadrado de Moto Express debe verse completo dentro de su ficha y el acceso móvil al agente debe quedar en la cabecera, sin tapar precios ni textos. La primera corrección con alto porcentual siguió recortando por el tamaño intrínseco del elemento de grid; se adoptó un cuadro explícito de 220 × 220 px, validado en producción.
 
 ## Dirección visual
 
-Fondo marfil claro, texto grafito, verde petróleo como acento de acción y pequeños detalles cálidos. Composición editorial con alternancia de grillas, bloques de evidencia, información comercial y retrato real. Tipografía de sistema para carga rápida. Movimiento discreto y anulable por preferencia de movimiento reducido.
+Revisión solicitada el 1/10: reemplazar el predominio verde por una base blanco/gris claro, texto azul tinta y un solo acento azul, compatible con el logo real. Eliminar sombras desplazadas, inclinaciones de tarjetas y la franja redundante y mal alineada debajo de la portada. Mantener espacios, líneas y columnas consistentes. Las referencias revisadas fueron la portada de Linear (jerarquía sobria y prueba del producto) y la página de tarifas de Stripe (precios en columnas comparables con cifras dominantes); se toman criterios, no se copian diseños. La web debe priorizar un mensaje entendible, trabajos comprobados, alcance y precio legibles, objeciones resueltas y una consulta comercial clara. Tipografía de sistema para carga rápida. Movimiento discreto y anulable por preferencia de movimiento reducido.
 
 ## Criterios de aceptación
 
@@ -47,6 +52,8 @@ Fondo marfil claro, texto grafito, verde petróleo como acento de acción y pequ
 - Sitio desplegado sólo tras comprobar versión local y conservar respaldo de la versión publicada.
 - Páginas de servicios, sitemap y datos estructurados verificados, sin promesa de posición ni presentación de clientes no confirmados.
 - Revisión de las cabeceras de respuesta, acceso local al agente y funcionamiento de chat/eventos tras aplicar la configuración.
+- Logos y gráfica de portfolio visibles y legibles sin cortes ni desbordes en celular y escritorio; el favicon y la cabecera muestran la marca real.
+- Sin sombra desplazada en la ilustración inicial, sin banda de datos desalineada y sin predominio de verde. Los dos planes muestran las mismas filas y montos alineados; en celular se leen sin cifras cortadas ni columnas apretadas.
 
 ## Tareas
 
@@ -58,4 +65,4 @@ Fondo marfil claro, texto grafito, verde petróleo como acento de acción y pequ
 
 ## Límites conocidos
 
-No hay capturas reales de los tres proyectos en `sitio/assets`, ni prueba independiente de testimonios o métricas de negocio. No se inventarán. El acceso SSH no está documentado en el repositorio; se identificará antes de publicar.
+No hay capturas reales de los tres proyectos en `sitio/assets`, ni prueba independiente de testimonios o métricas de negocio. No se inventarán. Para aparecer en búsquedas locales específicas faltan una zona de cobertura confirmada y, si corresponde, datos verificables de un Perfil de Empresa; se evitarán páginas locales inventadas. La solicitud de indexación y la recepción de IndexNow no garantizan posición ni inclusión en resultados o respuestas de IA.

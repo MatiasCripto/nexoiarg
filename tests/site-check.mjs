@@ -65,9 +65,23 @@ check("datos de negocio y política de scripts coinciden", () => {
 });
 check("el retrato publicado es la versión actual de Jonatan", () => {
   const source = readFileSync(join(root, "..", "Jonatan.png"));
-  const published = readFileSync(join(root, "assets/jonatan-2026.png"));
+  const published = readFileSync(join(root, "assets/jonatan-2026.jpg"));
   assert(source.equals(published));
-  assert(html.includes('src="/assets/jonatan-2026.png"'));
+  assert(html.includes('src="/assets/jonatan-2026.jpg"'));
+});
+check("logo real y tres imágenes del portfolio están publicadas", () => {
+  for (const file of ["nexoiarg-brand-2026.png", "nexoiarg-favicon-2026.png", "nexoiarg-touch-2026.png", "ceramicas-gutierrez-logo.png", "moto-express-delivery-track.png", "distribuidora-monti-card.svg"]) {
+    assert(existsSync(join(root, "assets", file)), "falta " + file);
+  }
+  for (const file of ["index.html", "privacidad.html", "agentes-ia-whatsapp.html", "automatizaciones-para-negocios.html", "paginas-web-para-comercios.html", "punto-de-venta-windows.html"]) {
+    const page = readFileSync(join(root, file), "utf8");
+    assert(page.includes('/assets/nexoiarg-brand-2026.png'), "falta logo en " + file);
+    assert(page.includes('/assets/nexoiarg-favicon-2026.png'), "falta favicon en " + file);
+    assert(!page.includes('class="brand-mark"'), "marca anterior en " + file);
+  }
+  for (const file of ["ceramicas-gutierrez-logo.png", "moto-express-delivery-track.png", "distribuidora-monti-card.svg"]) {
+    assert(html.includes('/assets/' + file), "portfolio sin " + file);
+  }
 });
 check("precios y sumas coinciden", () => {
   for (const value of ["$290.000", "$180.000", "$470.000", "$190.000", "$120.000", "$310.000", "$70", "800"]) {

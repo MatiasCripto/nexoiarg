@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">Distribuidora Monti</title>
+  <desc id="desc">Gráfica para el portfolio inspirada en el camión y los colores del sitio de Distribuidora Monti</desc>
+  <defs>
+    <linearGradient id="band" x1="0" x2="1">
+      <stop offset="0" stop-color="#ed479a"/>
+      <stop offset=".27" stop-color="#ff9b52"/>
+      <stop offset=".52" stop-color="#f3d449"/>
+      <stop offset=".75" stop-color="#51bf9b"/>
+      <stop offset="1" stop-color="#20a8d3"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#075c86"/>
+      <stop offset="1" stop-color="#123e78"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="460" fill="url(#base)"/>
+  <rect width="800" height="16" fill="url(#band)"/>
+  <circle cx="400" cy="161" r="75" fill="#fff"/>
+  <circle cx="400" cy="161" r="69" fill="none" stroke="url(#band)" stroke-width="8"/>
+  <g fill="#102b43" transform="translate(349 134)">
+    <path d="M2 10h60v41H2zM62 22h22l20 20v9H62zm7 6v14h23L79 28z"/>
+    <circle cx="23" cy="55" r="12" fill="#102b43" stroke="#fff" stroke-width="5"/>
+    <circle cx="80" cy="55" r="12" fill="#102b43" stroke="#fff" stroke-width="5"/>
+  </g>
+  <text x="400" y="283" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" text-anchor="middle" letter-spacing="5">DISTRIBUIDORA</text>
+  <text x="400" y="360" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="75" font-weight="900" text-anchor="middle" letter-spacing="4">MONTI</text>
+  <rect x="304" y="385" width="192" height="6" rx="3" fill="url(#band)"/>
+</svg>

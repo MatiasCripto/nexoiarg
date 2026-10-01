@@ -1,0 +1,162 @@
+/* Dirección visual 2026-10: base neutra, estructura clara y un solo acento. */
+:root{--paper:#f7f9fc;--white:#fff;--ink:#152238;--muted:#566477;--deep:#142944;--green:#285fbd;--mint:#eaf0fa;--line:#dce3ed;--warm:#bc8e52}
+body{background:var(--paper)}
+h1,h2,h3{letter-spacing:-.045em}
+h1{line-height:1.04}
+h2{line-height:1.1}
+em{color:var(--green)}
+:focus-visible{outline-color:#d59437}
+.section-pad{padding:clamp(76px,8vw,118px) 0}
+.eyebrow,.project-type,.solution-index{letter-spacing:.11em;color:var(--green)}
+.button{border-radius:7px;justify-content:center;box-shadow:none}
+.button-primary{background:#245ec4}
+.button-primary:hover{background:#174ca6}
+.button-light{background:#fff;color:var(--deep)}
+.button-light:hover{background:#edf3ff}
+.button-outline{border-color:#9aacbf;color:var(--deep)}
+.button-outline:hover{background:#edf3fc}
+.text-link,.inline-link,.inline-button{color:#214f9f}
+.site-header{background:rgba(255,255,255,.97);border-bottom-color:#e5e9f0}
+.brand{color:var(--ink)}
+.brand-logo{border:1px solid #d4dce7}
+.main-nav .nav-contact,.interior-links .interior-contact{background:#245ec4}
+.main-nav .nav-contact:hover,.interior-links .interior-contact:hover{background:#174ca6}
+
+.hero{background:#fff;padding-top:clamp(68px,7vw,100px);padding-bottom:clamp(76px,8vw,112px)}
+.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:clamp(38px,5.5vw,84px)}
+.hero-copy h1{font-size:clamp(3.2rem,5.3vw,5.45rem)}
+.hero-lead{color:var(--muted);max-width:560px}
+.hero-visual{transform:none;box-shadow:none;border:1px solid #cbd6e5;border-radius:12px;background:#f1f5fb;padding:16px}
+.visual-top{color:#34537a}
+.live-dot{background:#3173d2}
+.flow-step{border-color:#dce3ed}
+.flow-step>span,.flow-step i{color:#285fbd}
+.accent-step{background:#e4edfb;color:var(--ink)}
+.accent-step p,.accent-step>span,.accent-step i{color:#385678}
+.visual-caption{color:#647286}
+
+.work-section{background:#f6f8fb}
+.featured-work,.work-item{border-color:#dbe3ed;border-radius:12px;overflow:hidden}
+.featured-copy h3{color:var(--ink)}
+.work-graphic--ceramicas{background:#0d1017}
+.work-graphic--ceramicas img{max-width:310px;max-height:310px}
+.work-media--monti{background:#123e78}
+.work-media--moto img{width:220px;height:220px;max-width:100%;min-width:0;min-height:0;object-fit:contain}
+.work-note{color:#637187}
+.solutions-section{background:#fff}
+.solution-main{background:#162b48;border-radius:12px}
+.solution-main .solution-index{color:#99bfff}
+.solution-main>p,.solution-main .demo-note{color:#d9e3f1}
+.solution-main .solution-limit{border-color:#4c6280}
+.solution-side article{border-radius:12px;border-color:#dce3ed}
+.solution-side article .solution-index{color:#285fbd}
+.pos-section{background:#eef3fa;color:var(--ink)}
+.pos-section .eyebrow{color:#285fbd}
+.pos-section .lead,.pos-section .muted{color:var(--muted)}
+.pos-panel{background:#fff;border:1px solid #cdd8e8;border-radius:12px;transform:none;box-shadow:none}
+.pos-panel-top,.pos-panel small{color:#637187}
+.pos-feature{border-color:#dce3ed}
+.pos-feature span{color:#285fbd}
+.calc-section{background:#fff}
+.calculator{background:#f8fafd;border-radius:12px}
+.stepper button,.money-input input{border-color:#b9c6d7}
+.stepper button:hover{background:#eaf0fa}
+.calc-result{background:#162b48;border-radius:7px}
+.calc-result strong{color:#d7e6ff}
+
+.price-section{background:#f3f6fa}
+.price-section .section-head{margin-bottom:42px}
+.price-grid{max-width:1120px;margin-inline:auto;gap:24px;align-items:stretch}
+.price-card{border:1px solid #d5dfeb;border-radius:12px;padding:clamp(28px,3.3vw,42px)}
+.featured-price{border:2px solid #285fbd}
+.price-top{min-height:154px}
+.price-top h3{font-size:1.9rem;margin:11px 0 8px}
+.price-top p{font-size:.95rem}
+.price-figures{border-color:#dbe3ed;padding:24px 0;gap:20px}
+.price-figures>div{gap:5px}
+.price-figures span,.first-month span{font-size:.82rem;line-height:1.4}
+.price-figures strong{font-size:clamp(1.8rem,2.55vw,2.35rem);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.first-month{background:#edf3fc;border:1px solid #d7e3f3;border-radius:7px;padding:15px 18px;align-items:center;margin-top:18px}
+.first-month span{color:#2b4566}
+.first-month strong{font-size:1.4rem;font-variant-numeric:tabular-nums;color:#194b9b}
+.price-list{line-height:1.6;margin:23px 0}
+.price-card>.button{width:100%;justify-content:center}
+.price-terms{border-top:1px solid #dbe3ed;margin-top:26px;padding-top:18px}
+.price-terms summary{cursor:pointer;list-style:none;color:#214f9f;font-weight:700;display:flex;justify-content:space-between;gap:12px}
+.price-terms summary::-webkit-details-marker{display:none}
+.price-terms summary:after{content:"+";font-size:1.3rem;line-height:1}
+.price-terms[open] summary:after{content:"−"}
+.price-terms .price-list{margin:20px 0}
+.price-terms .price-detail{margin-top:16px}
+.price-foot{margin-top:26px}
+.process-section{background:#fff}
+.process-grid>div{border-color:#bccbe0}
+.founder-section{background:#f6f8fb}
+.founder-photo{background:#dce3ec;border-radius:12px}
+.faq-section{background:#fff}
+.contact-section{background:#152944;color:#fff}
+.contact-grid .eyebrow{color:#a7c8ff}
+.contact-grid>div>p:not(.eyebrow),.contact-action p{color:#d9e4f2!important}
+.contact-action .button{background:#fff;color:#172944}
+.contact-action .button:hover{background:#eaf1fb}
+.contact-action span{color:#c5d9f2}
+.site-footer{background:#0e1c31}
+.footer-grid>div:first-child p,.footer-grid>div>span,.footer-bottom{color:#bbc9da}
+.footer-bottom{border-color:#3a4c65}
+.chat-launcher{background:#1b4b95;border:1px solid #b7c9e9;box-shadow:0 8px 24px #0e234055}
+.chat-launcher:hover{background:#123d7d}
+.chat-launcher-icon{background:#e3edfc;color:#174786}
+.chat-panel{border-color:#cbd6e5;box-shadow:0 14px 44px #0e23404d;border-radius:12px}
+.chat-header{background:#172d4b}
+.chat-avatar{background:transparent;overflow:hidden}
+.chat-avatar img{width:100%;height:100%;object-fit:cover}
+.chat-header span{color:#d4e0f0}
+.chat-body{background:#f6f8fc}
+.chat-message.user{background:#dfeafb}
+.chat-suggestions button{border-color:#becbdc}
+.chat-suggestions button:hover{background:#eaf0fa}
+.chat-form input{border-color:#b3c2d6}
+
+/* Páginas de servicios y privacidad. */
+.interior-hero{background:#fff;border-color:#e0e6ee}
+.interior-kicker{transform:none;border:1px solid #d4dfec;background:#f3f6fa;border-radius:10px}
+.interior-aside{background:#eff4fb;border-top-color:#285fbd;border-radius:0 0 10px 10px}
+.interior-price{border-left-color:#285fbd;background:#f3f6fb}
+.interior-related a:hover{background:#eaf0fa}
+.privacy-main .privacy-note{background:#eff4fb}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-visual{max-width:680px}
+  .price-grid{grid-template-columns:1fr;max-width:620px}
+  .price-top{min-height:0;padding-bottom:20px}
+}
+@media(max-width:650px){
+  .hero{padding-top:54px;padding-bottom:78px}
+  .hero h1{font-size:clamp(2.65rem,11vw,3.55rem)}
+  .hero-visual{padding:11px;border-radius:10px}
+  .flow-step{padding:17px 13px;grid-template-columns:26px 1fr 13px;gap:8px}
+  .visual-top{padding:5px 4px 12px}
+  .work-graphic{min-height:285px}
+  .work-graphic--ceramicas{min-height:270px;max-height:300px}
+  .work-graphic--ceramicas img{max-width:240px;max-height:240px}
+  .work-media{height:220px}
+  .price-card{padding:28px 24px}
+  .price-figures{grid-template-columns:1fr;gap:0;padding:8px 0}
+  .price-figures>div{flex-direction:row;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0}
+  .price-figures>div+div{border-top:1px solid #e6ebf2}
+  .price-figures span{max-width:150px}
+  .price-figures strong{font-size:1.7rem}
+  .first-month{gap:12px}
+  .first-month span{max-width:155px}
+  .first-month strong{font-size:1.24rem}
+  .contact-action .button{background:#fff;color:#172944}
+  .chat-launcher{width:44px;height:44px;padding:0;right:78px;top:12px;bottom:auto;z-index:95;justify-content:center;border-radius:8px;box-shadow:none}
+  .chat-launcher-icon{width:30px;height:30px}
+  .chat-launcher>span:last-child{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .chat-panel{border-radius:0}
+}
+@media(max-width:380px){
+  .price-figures strong{font-size:1.55rem}
+  .first-month strong{font-size:1.15rem}
+}
