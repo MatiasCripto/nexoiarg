@@ -1,6 +1,6 @@
 # Verificación del rediseño
 
-Fecha: 2026-10-01. Estado: publicado y comprobado. Git remoto pendiente de autorización/revisión para el repositorio público.
+Fecha: 2026-10-01. Estado: publicado, comprobado y enviado a Git.
 
 ## Pruebas locales
 
@@ -34,4 +34,4 @@ Fecha: 2026-10-01. Estado: publicado y comprobado. Git remoto pendiente de autor
 
 ## Git
 
-- El remoto identificado es el repositorio público vacío `MatiasCripto/nexoiarg`. La revisión automática rechazó el primer intento de publicación por posible exposición de información. La auditoría de archivos no encontró `.env`, llaves, tokens ni respaldos entre los archivos preparados; `Jonatan.png` se incluye por pedido expreso de Jonatan. Se mantiene pendiente la revisión/autorización del envío público.
+- El remoto es el repositorio público `MatiasCripto/nexoiarg`. La revisión automática rechazó el primer intento por posible exposición de información. Tras auditar los archivos preparados y confirmar que no contenían `.env`, llaves, tokens ni respaldos, se creó el commit `e43b353` y se envió `main` a `origin/main`. `Jonatan.png` está incluido como pidió Jonatan.

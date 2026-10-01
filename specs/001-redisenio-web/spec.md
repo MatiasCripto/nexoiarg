@@ -1,6 +1,6 @@
 # Rediseño integral de nexoiarg.com
 
-Fecha: 2026-09-30. Revisión visual: 2026-10-01. Estado: publicado y verificado; envío a Git pendiente de revisión de acceso al repositorio público.
+Fecha: 2026-09-30. Revisión visual: 2026-10-01. Estado: publicado, verificado y enviado a Git.
 
 ## Objetivo
 
