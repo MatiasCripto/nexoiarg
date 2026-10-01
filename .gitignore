@@ -1,0 +1,9 @@
+.local-ssh/
+.research-assets/
+.vps_known_hosts
+respaldo-2026-09-30/
+*.log
+node_modules/
+**/.env
+*.pem
+*.key

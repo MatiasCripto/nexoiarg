@@ -1,0 +1,15 @@
+[Unit]
+Description=Receptor de eventos de nexoiarg.com (/api/evento)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /opt/nexo-eventos/servidor.js
+Restart=always
+RestartSec=3
+User=www-data
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/var/log/nexo-eventos.jsonl
+
+[Install]
+WantedBy=multi-user.target

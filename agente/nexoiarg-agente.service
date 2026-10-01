@@ -1,0 +1,42 @@
+# Servicio del agente de NexoIArg.
+#
+#   sudo cp nexoiarg-agente.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now nexoiarg-agente
+#   sudo systemctl status nexoiarg-agente
+#
+# Ver los registros en vivo:  sudo journalctl -u nexoiarg-agente -f
+
+[Unit]
+Description=Agente conversacional de NexoIArg
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/nexoiarg/agente
+EnvironmentFile=/opt/nexoiarg/agente/.env
+ExecStart=/usr/bin/node /opt/nexoiarg/agente/servidor.js
+
+# Si se cae, vuelve solo. Si se cae cinco veces en un minuto, se detiene
+# y queda el registro: es una falla real, no un tropiezo.
+Restart=on-failure
+RestartSec=3
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+# El servicio no necesita ser root ni escribir en disco.
+User=www-data
+Group=www-data
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=nexoiarg-agente
+
+[Install]
+WantedBy=multi-user.target
