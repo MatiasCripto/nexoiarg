@@ -2,9 +2,7 @@
    Escucha SOLO en localhost:8790 (nginx le reenvía /api/evento) y agrega
    cada evento como una línea JSON en /var/log/nexo-eventos.jsonl.
    Sin dependencias: corre con el Node que ya está instalado.
-
-   Coherente con la página de privacidad: no guarda la IP completa
-   (recorta el último octeto) y descarta cualquier campo que no espere. */
+   Descarta IP, agente de usuario y campos no esperados. */
 
 "use strict";
 
@@ -26,16 +24,11 @@ http.createServer(function (req, res) {
   req.on("end", function () {
     try {
       const e = JSON.parse(cuerpo);
-      const ip = String(req.headers["x-forwarded-for"] || req.socket.remoteAddress || "")
-                   .split(",")[0].trim()
-                   .replace(/\.\d+$/, ".0");   // anonimiza el último octeto
       const linea = JSON.stringify({
         e:  String(e.e || "").slice(0, 64),          // nombre del evento
         x:  e.x == null ? null : String(e.x).slice(0, 200),
         p:  String(e.p || "").slice(0, 128),         // path de la página
-        t:  Date.now(),                              // hora del servidor
-        ip: ip,
-        ua: String(req.headers["user-agent"] || "").slice(0, 160)
+        t:  Date.now()                               // hora del servidor
       });
       if (linea.length < 700) fs.appendFile(RUTA, linea + "\n", function () {});
     } catch (err) { /* JSON roto: se ignora, nunca se rompe */ }

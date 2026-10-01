@@ -4,7 +4,7 @@ Fecha: 2026-09-30. Estado: parcial, pendiente despliegue y revisión visual de l
 
 ## Comprobado localmente
 
-- `node tests/site-check.mjs`: 9 controles aprobados. Verifica anclas, archivos, imagen social, el retrato actualizado, precios, alcance factual, tratamiento de texto del chat, accesibilidad estructural y privacidad.
+- `node tests/site-check.mjs`: 12 controles aprobados. Verifica anclas, archivos, imagen social y retrato, cuatro páginas de servicio y sitemap, datos de negocio y hash CSP, precios, alcance factual, chat, privacidad y límites de servicios.
 - `node --check`: sintaxis válida en `sitio/assets/site.js`, `agente/servidor.js` y `vps/agente-servidor.js`.
 - `node agente/pruebas.js` contra servicio local con clave de prueba: 12/12 pruebas aprobadas. Las preguntas abiertas usaron el respaldo porque no se configuró un proveedor real en el entorno de prueba.
 - Vista previa estática en `http://127.0.0.1:4173`: portada, CSS, JS, privacidad y sitemap respondieron HTTP 200.
@@ -18,6 +18,17 @@ Fecha: 2026-09-30. Estado: parcial, pendiente despliegue y revisión visual de l
 - Se guardaron copias previas de la web, el agente y la configuración Nginx en `/home/nexo-web/`, sin leer ni copiar el archivo privado `.env`.
 - La versión nueva de `sitio/` y del agente se subió a `/home/nexo-web/` para preparar la publicación. Los SHA-256 de portada, retrato y agente coinciden con los locales.
 - La carpeta web del VPS no es un repositorio Git. Se inició un repositorio local y se prepararon únicamente los archivos del sitio y `Jonatan.png`; queda por identificar el repositorio remoto y completar el envío.
+- Se identificó el repositorio vacío `MatiasCripto/nexoiarg` en la cuenta GitHub de Jonatan y se configuró como remoto local.
+- Se verificó `https://nexoiarg.com/` en Google Search Console con el archivo HTML existente. El informe del 20/09/2026 registra indexadas sólo `/` y `/privacidad.html`; la portada se rastreó por última vez el 11/09/2026. La nueva versión aún no está publicada, por lo que sus páginas no se enviaron al índice.
+
+## Ampliación SEO y seguridad
+
+- Se crearon páginas diferenciadas para agentes, automatizaciones, sitios web y punto de venta. Todas tienen título y descripción propios, canonical, enlaces desde la portada y enlaces entre soluciones.
+- El sitemap enumera las seis páginas públicas. El archivo `robots.txt` permite el rastreo general, incluida la búsqueda de ChatGPT.
+- La configuración Nginx preparada redirige `www` a la URL principal, oculta archivos privados y el respaldo HTML anterior, añade CSP, HSTS y otras cabeceras, y no usa la IP reenviada por un visitante como origen confiable.
+- La página actual respondía sin cabeceras de seguridad al pedir `/`; la configuración corregida está pendiente de aplicación y comprobación pública.
+- Agente y receptor de eventos preparados para escuchar sólo en localhost. El receptor de eventos deja de guardar IP y agente de usuario; privacidad se actualizó para reflejarlo.
+- `node agente/pruebas.js` tras limitar el agente a `127.0.0.1`: 12/12 pruebas aprobadas.
 
 ## Fuentes y alcance
 
@@ -30,7 +41,8 @@ Fecha: 2026-09-30. Estado: parcial, pendiente despliegue y revisión visual de l
 
 - Revisar en navegador real a 360, 390, 768 y 1440 px: capturas completas, menú, chat, calculadora, teclado, consola y superposiciones.
 - Publicar frontend y ficha del agente cuando la cuenta limitada obtenga los permisos precisos; verificar respuestas reales y eventos.
-- Confirmar el destino Git remoto y enviar el cambio, incluida la imagen nueva.
+- Enviar los cambios al repositorio Git remoto, incluida la imagen nueva.
+- Tras publicar, enviar el sitemap actualizado desde Search Console y comprobar las nuevas URL con la herramienta de inspección.
 - Confirmar visualmente la versión publicada y obtener capturas de escritorio y celular.
 
 El navegador integrado bloqueó abrir el archivo local por su política de URL y prohibió repetir ese acceso por otra vía. Por eso la inspección visual local no se declara realizada.

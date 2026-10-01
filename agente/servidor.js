@@ -484,7 +484,7 @@ const servidor = http.createServer((req, res) => {
 
   if (req.method !== "POST") return responder(res, 405, { error: "método no permitido" });
 
-  const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || req.socket.remoteAddress;
+  const ip = String(req.headers["x-real-ip"] || req.socket.remoteAddress || "");
   if (!pasaElLimite(ip)) {
     return responder(res, 429, { respuesta: "Estuvimos hablando bastante. Seguí por WhatsApp con Jonatan." });
   }
@@ -531,6 +531,6 @@ const servidor = http.createServer((req, res) => {
   });
 });
 
-servidor.listen(PUERTO, () => {
-  console.log(`Agente de NexoIArg escuchando en :${PUERTO} — proveedor ${PROVEEDOR}, origen ${ORIGEN}`);
+servidor.listen(PUERTO, "127.0.0.1", () => {
+  console.log(`Agente de NexoIArg escuchando en 127.0.0.1:${PUERTO} — proveedor ${PROVEEDOR}, origen ${ORIGEN}`);
 });

@@ -11,7 +11,7 @@
 
 "use strict";
 
-const BASE = process.env.BASE || "http://localhost:3020";
+const BASE = process.env.BASE || "http://127.0.0.1:3020";
 
 const casos = [
   {
